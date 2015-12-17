@@ -1,7 +1,7 @@
 package uxcl.minfra.Network;
 
 /**
- * Created by Tessa on 17/12/15.
+ * Created by JZeilmaker on 17/12/15.
  */
 public class URL {
 
@@ -10,9 +10,7 @@ public class URL {
     final public String PERSON  = BASE + "person.php";
     final public String RESULT = BASE + "result.php";
 
-
     public boolean URL () {
         return true;
     }
-
 }

@@ -13,7 +13,7 @@ import uxcl.minfra.Model.Person;
 import uxcl.minfra.Model.Result;
 
 /**
- * Created by Tessa on 17/12/15.
+ * Created by JZeilmaker on 17/12/15.
  */
 public class Person_parser {
 

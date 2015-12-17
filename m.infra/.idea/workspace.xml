@@ -12,7 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d0b9d4f-e406-4d15-a459-3a637aec01f9" name="Default" comment="Start, Go!">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Network/URL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/BaseActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Person.java" afterPath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Person_parser.java" afterPath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Person_parser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Result.java" afterPath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Result.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result_parser.java" afterPath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result_parser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Network/URL.java" afterPath="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Network/URL.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="m.infra.iws" />
@@ -34,10 +39,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.6053812">
               <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -50,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result_parser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,17 +67,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Person_parser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="URL.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="URL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Network/URL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33632287">
-              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -82,20 +87,20 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Result.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
               <folding>
-                <element signature="e#210#211#0" expanded="true" />
-                <element signature="e#242#243#0" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#389#390#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#461#462#0" expanded="true" />
-                <element signature="e#496#497#0" expanded="true" />
-                <element signature="e#527#528#0" expanded="true" />
-                <element signature="e#575#576#0" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
+                <element signature="e#215#216#0" expanded="true" />
+                <element signature="e#247#248#0" expanded="true" />
+                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#336#337#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#394#395#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#466#467#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,23 +110,24 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Person.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
               <folding>
-                <element signature="e#261#262#0" expanded="true" />
-                <element signature="e#308#309#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#385#386#0" expanded="true" />
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#665#666#0" expanded="true" />
-                <element signature="e#692#693#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#234#235#0" expanded="true" />
+                <element signature="e#266#267#0" expanded="true" />
+                <element signature="e#313#314#0" expanded="true" />
+                <element signature="e#355#356#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
+                <element signature="e#421#422#0" expanded="true" />
+                <element signature="e#469#470#0" expanded="true" />
+                <element signature="e#509#510#0" expanded="true" />
+                <element signature="e#540#541#0" expanded="true" />
+                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#639#640#0" expanded="true" />
+                <element signature="e#670#671#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#769#770#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,8 +137,20 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Credential.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Credential.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1732,17 +1750,17 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/credential.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Credential.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/result.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Result.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Person.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result_parser.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Person_parser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Network/URL.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Person_parser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result_parser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Person.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Result.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Credential.java" />
       </list>
     </option>
   </component>
@@ -1942,12 +1960,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="true" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="6778ce34" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_10_API_23" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -2193,24 +2213,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Credential.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.4827585">
@@ -2233,10 +2235,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Person_parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result_parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2246,23 +2256,24 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding>
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#308#309#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#535#536#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2270,47 +2281,57 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Model/Result.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding>
-            <element signature="e#210#211#0" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Result_parser.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Network/URL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Credential.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/JSON_model_parser/Person_parser.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/uxcl/minfra/Network/URL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33632287">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-          <folding />
+        <state vertical-scroll-proportion="0.6053812">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

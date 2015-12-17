@@ -8,7 +8,7 @@ import android.util.Log;
 import java.security.MessageDigest;
 
 /**
- * Created by Tessa on 17/12/15.
+ * Created by JZeilmaker on 17/12/15.
  */
 public class Credential extends AppCompatActivity {
     String imeiDevice=null;
