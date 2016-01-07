@@ -5,7 +5,7 @@ package uxcl.minfra.Network;
  */
 public class URL {
 
-    private String BASE = "http://dev.jamaja.nl/";
+    final public String BASE = "http://dev.jamaja.nl/";
 
     final public String PERSON  = BASE + "person.php";
     final public String RESULT = BASE + "result.php";

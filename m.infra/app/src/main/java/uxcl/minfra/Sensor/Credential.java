@@ -15,8 +15,8 @@ public class Credential extends AppCompatActivity {
     String imsiDevice=null;
 
 
-//    getPhoneImei();
-//    String hashImei = sha256(getPhoneImei());
+    //getPhoneImei();
+//   String hashImei = sha256(getPhoneImei());
 //    Log.e("phoneID:", "sha(imei) " + hashImei);
 
     public String getPhoneImei(){
@@ -29,6 +29,7 @@ public class Credential extends AppCompatActivity {
 
         return  imeiDevice;
 
+//        return imeiDevice;
     }
 
     public static String sha256(String base) {

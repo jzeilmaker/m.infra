@@ -10,49 +10,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import uxcl.minfra.Sensor.Credential;
-import uxcl.minfra.Sensor.GPSTracker;
-import uxcl.minfra.Sensor.TempSensorActivity;
+
 
 
 public class MainActivity extends AppCompatActivity {
-    GPSTracker gps;
-    Credential credential;
-    TempSensorActivity temp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                // GET GPS CORDS
-                gps = new GPSTracker(MainActivity.this);
-
-                if (gps.canGetLocation()) {
-
-                    double latitude = gps.getLatitude();
-                    double longitude = gps.getLongitude();
-
-                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-                } else {
-                    gps.showSettingsAlert();
-                }
-
-
-            }
-        });
-
-
-
     }
 
     @Override
