@@ -33,7 +33,7 @@ public class Credential extends AppCompatActivity {
 
     public static String sha256(String base) {
         try{
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
             byte[] hash = digest.digest(base.getBytes("UTF-8"));
             StringBuffer hexString = new StringBuffer();
 

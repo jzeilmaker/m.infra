@@ -12,11 +12,13 @@ import android.widget.Toast;
 
 import uxcl.minfra.Sensor.Credential;
 import uxcl.minfra.Sensor.GPSTracker;
+import uxcl.minfra.Sensor.TempSensorActivity;
 
 
 public class MainActivity extends AppCompatActivity {
     GPSTracker gps;
     Credential credential;
+    TempSensorActivity temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-
-
-
                 // GET GPS CORDS
                 gps = new GPSTracker(MainActivity.this);
 
@@ -47,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     gps.showSettingsAlert();
                 }
+
 
             }
         });
