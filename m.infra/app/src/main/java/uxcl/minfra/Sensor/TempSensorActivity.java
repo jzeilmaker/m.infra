@@ -1,5 +1,6 @@
 package uxcl.minfra.Sensor;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -13,6 +14,8 @@ import uxcl.minfra.Network.RequestPackage;
 import uxcl.minfra.Network.URL;
 import uxcl.minfra.R;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -60,7 +63,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
 
@@ -81,11 +84,26 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
                         double longitude = gps.getLongitude();
                         float tmp = getTemp();
 
-                        Toast.makeText(getApplicationContext(), "\nLat: " + latitude + "\nLong: " + longitude + "\nTemp: " + tmp
-                                + "\nHash "
-                                , Toast.LENGTH_LONG).show();
 
-                        attemptPost(latitude, longitude, tmp);
+
+                        if (isOnline()) {
+                            // Dit is stap 1. RequestData wordt aangeroepen. Je stuurt hier in de URL mee
+
+                            Toast.makeText(getApplicationContext(), "\nLat: " + latitude + "\nLong: " + longitude + "\nTemp: " + tmp
+                                    + "\nHash "
+                                    , Toast.LENGTH_LONG).show();
+
+                            attemptPost(url.RESULT, latitude, longitude, tmp);
+
+                            Log.d("nw: ","wel netwerk");
+
+                            //postData(url.RESULT); // In mijn geval is dat een testpagina
+                        } else {
+                           Log.d("nw: ","Geen netwerk verbinding");
+                        }
+
+
+
 
                     } else {
                         gps.showSettingsAlert();
@@ -96,21 +114,37 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
     }
 
+    protected boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        url = new URL();
+
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean getUser() {
         // Check if person exist if nog create in db else true for attemptPost()
         return false;
     }
 
-   public void attemptPost(double latitude, double longtide, float temp){
+
+
+   public void attemptPost(String uri, double latitude, double longtide, float temp){
        RequestPackage p = new RequestPackage();
 
        p.setMethod("POST");
-       p.setUri(url.BASE);
+       p.setUri(uri);
 
 //       p.setParam("user_id", );
        p.setParam("temp", String.valueOf(temp));
        p.setParam("latitude", String.valueOf(latitude));
        p.setParam("longtide", String.valueOf(longtide));
+
+       Log.e("getParam", p.getEncodedParams()); //logging
 
        MyTask mytask = new MyTask();
        mytask.execute(p);
@@ -171,10 +205,10 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
     private class MyTask extends AsyncTask<RequestPackage, String, String>
     {
         protected void onPreExecute() {
-            if (myTasks.size() == 0) {
-                progressBar.setVisibility(View.VISIBLE);
-            }
-            myTasks.add(this);
+//            if (myTasks.size() == 0) {
+//                progressBar.setVisibility(View.VISIBLE);
+//            }
+//            myTasks.add(this);
         }
 
         @Override
@@ -184,6 +218,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
         }
 
         protected void onPostExecute(String result) {
+            Log.d("nw:", "yes werkt " + result);
 //            gebruiker = login_parser.parseFeed(result);
 //
 //            boolean authenticated = gebruiker.isAuthenticated();
@@ -194,10 +229,10 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 //            login(authenticated);
 //
 //            myTasks.remove(this);
-
-            if (myTasks.size() == 0) {
-                progressBar.setVisibility(View.INVISIBLE);
-            }
+//
+//            if (myTasks.size() == 0) {
+//                progressBar.setVisibility(View.INVISIBLE);
+//            }
         }
     }
 
