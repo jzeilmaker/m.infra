@@ -57,7 +57,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
             mTemperature= mSensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE); // requires API level 14.
         }
         if (mTemperature == null) {
-            temperaturelabel.setText("Sorry, temperture sensor not available fot this device.");
+            temperaturelabel.setText(NOT_SUPPORTED_MESSAGE);
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -71,7 +71,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
             public void onClick(View arg0) {
 
                 if (mTemperature == null) {
-                    temperaturelabel.setText("Sorry, temperture sensor not available fot this device. \n\n What did i tell you!");
+                    temperaturelabel.setText(NOT_SUPPORTED_MESSAGE+" \n\n What did i tell you!");
                 }else {
 
 
