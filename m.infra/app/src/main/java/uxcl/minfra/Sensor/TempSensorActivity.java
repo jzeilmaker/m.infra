@@ -130,16 +130,16 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
    public void attemptPost(String uri, double latitude, double longtide, float temp){
        RequestPackage p = new RequestPackage();
 
-       p.setMethod("POST");
+       p.setMethod("GET");
 //       p.setUri(uri);
        p.setUri("http://rkodde.nl/infra");
 //       p.setParam("user_id", );
-//       p.setParam("method", "post");
-       p.setParam("mime", "123456789");
-       p.setParam("hash", "f7c3bc1d808e04732adf679965ccc34ca7ae3441");
-//       p.setParam("temp", String.valueOf(temp));
-//       p.setParam("lat", String.valueOf(latitude));
-//       p.setParam("long", String.valueOf(longtide));
+       p.setParam("method", "post");
+       p.setParam("mime", String.valueOf("123"));
+       p.setParam("hash", String.valueOf("123"));
+       p.setParam("temp", String.valueOf(temp));
+       p.setParam("lat", String.valueOf(latitude));
+       p.setParam("long", String.valueOf(longtide));
 
        Log.e("nw", p.getEncodedParams()); //logging
        Log.e("nw", p+"");
