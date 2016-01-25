@@ -73,45 +73,39 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
                 if (mTemperature == null) {
                     temperaturelabel.setText(NOT_SUPPORTED_MESSAGE+" \n\n What did i tell you!");
                 }else {
-
-
                     // GET GPS CORDS
                     gps = new GPSTracker(TempSensorActivity.this);
 
                     if (gps.canGetLocation()) {
 
-                        double latitude = gps.getLatitude();
+                        double latitude  = gps.getLatitude();
                         double longitude = gps.getLongitude();
-                        float tmp = getTemp();
+                        float tmp        = getTemp();
 
-
-
-                        if (isOnline()) {
+                        if (isOnline())
+                        {
                             // Dit is stap 1. RequestData wordt aangeroepen. Je stuurt hier in de URL mee
-
-                            Toast.makeText(getApplicationContext(), "\nLat: " + latitude + "\nLong: " + longitude + "\nTemp: " + tmp
+                            Toast.makeText(getApplicationContext(),
+                                    "\nLat: " + latitude + "\nLong: " + longitude + "\nTemp: " + tmp
                                     + "\nHash "
                                     , Toast.LENGTH_LONG).show();
 
                             attemptPost(url.RESULT, latitude, longitude, tmp);
 
-                            Log.d("nw: ","wel netwerk");
+                            Log.d("nw: ", "wel netwerk");
 
-                            //postData(url.RESULT); // In mijn geval is dat een testpagina
-                        } else {
+                            //postData(url.RESULT);
+                        } else
+                        {
                            Log.d("nw: ","Geen netwerk verbinding");
                         }
-
-
-
-
-                    } else {
+                    } else
+                    {
                         gps.showSettingsAlert();
                     }
                 }
             }
         });
-
     }
 
     protected boolean isOnline() {
@@ -137,15 +131,18 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
        RequestPackage p = new RequestPackage();
 
        p.setMethod("POST");
-       p.setUri(uri);
-
+//       p.setUri(uri);
+       p.setUri("http://rkodde.nl/infra");
 //       p.setParam("user_id", );
-       p.setParam("temp", String.valueOf(temp));
-       p.setParam("latitude", String.valueOf(latitude));
-       p.setParam("longtide", String.valueOf(longtide));
+//       p.setParam("method", "post");
+       p.setParam("mime", "123456789");
+       p.setParam("hash", "f7c3bc1d808e04732adf679965ccc34ca7ae3441");
+//       p.setParam("temp", String.valueOf(temp));
+//       p.setParam("lat", String.valueOf(latitude));
+//       p.setParam("long", String.valueOf(longtide));
 
-       Log.e("getParam", p.getEncodedParams()); //logging
-
+       Log.e("nw", p.getEncodedParams()); //logging
+       Log.e("nw", p+"");
        MyTask mytask = new MyTask();
        mytask.execute(p);
    }
@@ -213,7 +210,9 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
         @Override
         protected String doInBackground(RequestPackage... params) {
+            Log.d("nw2",params+"");
             String content = HttpManager.getData(params[0]);
+            Log.d("nw2",content+"");
             return content;
         }
 

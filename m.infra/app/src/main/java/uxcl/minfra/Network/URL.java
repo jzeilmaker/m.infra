@@ -5,10 +5,10 @@ package uxcl.minfra.Network;
  */
 public class URL {
 
-    final public String BASE = "http://dev.jamaja.nl/";
+    final public String BASE = "http://rkodde.nl/infra";
 
     final public String PERSON  = BASE + "person.php";
-    final public String RESULT = BASE + "result.php";
+    final public String RESULT = BASE + "";
 
     public boolean URL () {
         return true;

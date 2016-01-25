@@ -1,5 +1,7 @@
 package uxcl.minfra.Network;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,6 +12,7 @@ import java.net.URL;
 /**
  * Created by Rene on 22-11-2015.
  */
+
 public class HttpManager {
 
     public static String getData(RequestPackage rp) {
@@ -29,9 +32,13 @@ public class HttpManager {
                 con.setDoOutput(true);
                 OutputStreamWriter writer = new OutputStreamWriter(con.getOutputStream());
                 writer.write(rp.getEncodedParams());
+                Log.e("nwH", rp.getEncodedParams()+"");
                 writer.flush();
             }
-//            return rp.getEncodedParams();
+           //return rp.getEncodedParams();
+
+
+
             StringBuilder sb = new StringBuilder();
 
             reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -41,10 +48,11 @@ public class HttpManager {
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");
             }
-
+            Log.e("nwH2",  sb.toString());
             return sb.toString();
 
         } catch(Exception e){
+            Log.e("nwH", "noGo");
             e.printStackTrace();
             return null;
         } finally {
@@ -52,6 +60,7 @@ public class HttpManager {
                 try {
                     reader.close();
                 } catch (IOException e) {
+                    Log.e("nwH", "noGo1");
                     e.printStackTrace();
                     return null;
                 }
