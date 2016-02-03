@@ -21,6 +21,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,9 +30,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.MessageDigest;
 import java.util.List;
 
-import uxcl.minfra.Sensor.Credential;
 
 public class TempSensorActivity extends MainActivity implements SensorEventListener {
     private List<MyTask> myTasks;
@@ -69,43 +70,73 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
             @Override
             public void onClick(View arg0) {
+                // GET GPS CORDS
+                gps = new GPSTracker(TempSensorActivity.this);
 
-                if (mTemperature == null) {
-                    temperaturelabel.setText(NOT_SUPPORTED_MESSAGE+" \n\n What did i tell you!");
-                }else {
-                    // GET GPS CORDS
-                    gps = new GPSTracker(TempSensorActivity.this);
+                if (gps.canGetLocation()) {
 
-                    if (gps.canGetLocation()) {
+                    double latitude   = gps.getLatitude();
+                    double longitude  = gps.getLongitude();
+                    float tmp         = 24;
+                    String phone_imei = getPhoneImei();
+                    String sha1Hex    = getSha1Hex(phone_imei);
 
-                        double latitude  = gps.getLatitude();
-                        double longitude = gps.getLongitude();
-                        float tmp        = getTemp();
-
-                        if (isOnline())
+                    if (isOnline())
+                    {
+                        if (mTemperature != null)
                         {
-                            // Dit is stap 1. RequestData wordt aangeroepen. Je stuurt hier in de URL mee
-                            Toast.makeText(getApplicationContext(),
-                                    "\nLat: " + latitude + "\nLong: " + longitude + "\nTemp: " + tmp
-                                    + "\nHash "
-                                    , Toast.LENGTH_LONG).show();
-
-                            attemptPost(url.RESULT, latitude, longitude, tmp);
-
-                            Log.d("nw: ", "wel netwerk");
-
-                            //postData(url.RESULT);
-                        } else
-                        {
-                           Log.d("nw: ","Geen netwerk verbinding");
+                            tmp  = getTemp();
                         }
+
+                        attemptPost(url.RESULT, latitude, longitude, tmp, sha1Hex, phone_imei);
+
+                        Toast.makeText(getApplicationContext(),
+                                "\nLat: " + latitude + "\nLong: " + longitude + "\nTemp: " + tmp
+                                + "\nImei: " + phone_imei + "\nHash: " + sha1Hex
+                                , Toast.LENGTH_LONG).show();
+
+                        Log.d("nw: ", "wel netwerk");
                     } else
                     {
-                        gps.showSettingsAlert();
+                       Log.d("nw: ","Geen netwerk verbinding");
                     }
+                } else
+                {
+                    gps.showSettingsAlert();
                 }
             }
         });
+    }
+
+    public static String getSha1Hex(String clearString)
+    {
+        try
+        {
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+            messageDigest.update(clearString.getBytes());
+            byte[] bytes = messageDigest.digest();
+            StringBuilder buffer = new StringBuilder();
+            for (byte b : bytes)
+            {
+                buffer.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
+            }
+            return buffer.toString();
+        }
+        catch (Exception ignored)
+        {
+            ignored.printStackTrace();
+            return null;
+        }
+    }
+
+    public String getPhoneImei(){
+        TelephonyManager telephonyManager;
+        telephonyManager  = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+        String imeiDevice = telephonyManager.getDeviceId();
+
+        Log.e("phoneID:", "imei: " + imeiDevice);
+
+        return  imeiDevice;
     }
 
     protected boolean isOnline() {
@@ -127,13 +158,11 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
 
 
-   public void attemptPost(String uri, double latitude, double longtide, float temp){
+   public void attemptPost(String uri, double latitude, double longtide, float temp, String sha1hex, String phone_imei){
        RequestPackage p = new RequestPackage();
 
-       p.setMethod("GET");
-//       p.setUri(uri);
        p.setUri("http://rkodde.nl/infra");
-//       p.setParam("user_id", );
+       p.setMethod("GET");
        p.setParam("method", "post");
        p.setParam("mime", String.valueOf("123"));
        p.setParam("hash", String.valueOf("123"));
@@ -146,7 +175,6 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
        MyTask mytask = new MyTask();
        mytask.execute(p);
    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
