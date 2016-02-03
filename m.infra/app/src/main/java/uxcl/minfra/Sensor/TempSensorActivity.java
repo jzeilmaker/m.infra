@@ -7,8 +7,10 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
+import uxcl.minfra.JSON_model_parser.Result_parser;
 import uxcl.minfra.MainActivity;
 import uxcl.minfra.Model.Person;
+import uxcl.minfra.Model.Result;
 import uxcl.minfra.Network.HttpManager;
 import uxcl.minfra.Network.RequestPackage;
 import uxcl.minfra.Network.URL;
@@ -26,6 +28,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +40,7 @@ import java.util.List;
 public class TempSensorActivity extends MainActivity implements SensorEventListener {
     private List<MyTask> myTasks;
     private ProgressBar progressBar;
+    private List<Result> results;
 
     GPSTracker gps;
     Float temp;
@@ -246,23 +250,16 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
         protected void onPostExecute(String result) {
             Log.d("nw:", "yes werkt " + result);
-//            gebruiker = login_parser.parseFeed(result);
-//
-//            boolean authenticated = gebruiker.isAuthenticated();
-//            if (authenticated) {
-//                saveUser(gebruiker);
-//            }
-//
-//            login(authenticated);
-//
-//            myTasks.remove(this);
-//
-//            if (myTasks.size() == 0) {
-//                progressBar.setVisibility(View.INVISIBLE);
-//            }
+            // Vang je result op, en voer het aan je parser die het omzet naar een java model
+            results = Result_parser.parseFeed(result);
+
+            refreshDisplay();
         }
     }
 
+    public void refreshDisplay() {
 
+
+    }
 }
 

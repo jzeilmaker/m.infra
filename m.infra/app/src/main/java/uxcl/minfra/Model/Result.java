@@ -7,7 +7,17 @@ public class Result {
 
     private int     person_id;
     private String  temp;
-    private String  location;
+    private String  lat;
+    private String  lng;
+    private String  mine;
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
 
     public int getPerson_id() {
         return person_id;
@@ -25,12 +35,31 @@ public class Result {
         this.temp = temp;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLat() {
+        return lat;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLat(String lat) {
+        this.lat = lat;
     }
+
+    public String getLng() {
+        return lng;
+    }
+
+    public void setLng(String lng) {
+        this.lng = lng;
+    }
+
+    public String getMine() {
+        return mine;
+    }
+
+    public void setMine(String mine) {
+        this.mine = mine;
+    }
+
+    private String  hash;
+
 
 }

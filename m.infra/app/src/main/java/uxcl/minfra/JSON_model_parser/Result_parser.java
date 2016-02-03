@@ -16,7 +16,6 @@ import uxcl.minfra.Model.Result;
  */
 public class Result_parser {
 
-
     public static List<Result> parseFeed(String content) {
         try {
             JSONObject json = new JSONObject(content);
@@ -31,8 +30,11 @@ public class Result_parser {
                 Result result_model = new Result();
 
                 result_model.setPerson_id(c.getInt("id"));
-                result_model.setLocation(c.getString("location"));
+                result_model.setLat(c.getString("lat"));
+                result_model.setLng(c.getString("long"));
+                result_model.setMine(c.getString("mine"));
                 result_model.setTemp(c.getString("temp"));
+                result_model.setHash(c.getString("hash"));
 
                 result_parser_list.add(result_model);
             }
