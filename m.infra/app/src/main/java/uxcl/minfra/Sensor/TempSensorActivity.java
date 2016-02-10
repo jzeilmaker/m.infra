@@ -34,7 +34,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import uxcl.minfra.Network.RequestPackage;
 
 
 public class TempSensorActivity extends MainActivity implements SensorEventListener {
@@ -46,6 +49,9 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
     Float temp;
     URL url;
 
+    private ListView listView;
+    private Context ctx;
+
     private TextView temperaturelabel;
     private SensorManager mSensorManager;
     private Sensor mTemperature;
@@ -56,14 +62,33 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        temperaturelabel = (TextView) findViewById(R.id.textView);
+        /** get data from server ---------------- */
+        if (isOnline()) {
+            Log.d("nw ", "Server is online ");
+
+            // Dit is stap 1. RequestData wordt aangeroepen. Je stuurt hier in de URL mee
+            this.requestData();
+        } else {
+            Log.d("nw", "Server is offline ");
+        }
+
+
+        List listCity = new ArrayList();
+        listCity.add(new Result("21","44","55"));
+        listCity.add(new Result("18","66","77"));
+
+        listView = ( ListView ) findViewById(R.id.listview);
+        listView.setAdapter(new ActivityAdapter(this, R.layout.content_main, listCity));
+
+
+//        temperaturelabel = (TextView) findViewById(R.id.textView);
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.ICE_CREAM_SANDWICH){
             mTemperature= mSensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE); // requires API level 14.
         }
-        if (mTemperature == null) {
-            temperaturelabel.setText(NOT_SUPPORTED_MESSAGE);
-        }
+//        if (mTemperature == null) {
+//            listView.setText(NOT_SUPPORTED_MESSAGE);
+//        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -252,7 +277,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
             Log.d("nw:", "yes werkt " + result);
             // Vang je result op, en voer het aan je parser die het omzet naar een java model
             results = Result_parser.parseFeed(result);
-
+            Log.d("nw5", result);
             refreshDisplay();
         }
     }
@@ -261,5 +286,18 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
 
     }
+
+    private void requestData() {
+        RequestPackage p = new RequestPackage();
+
+        p.setMethod("GET");
+        p.setUri("http://rkodde.nl/infra");
+
+        Log.d("getParam", p.getEncodedParams()); //logging
+
+        MyTask mytask = new MyTask();
+        mytask.execute(p);
+    }
+
 }
 

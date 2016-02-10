@@ -11,6 +11,13 @@ public class Result {
     private String  lng;
     private String  mine;
 
+    public Result(String temp, String lat, String lng) {
+        super();
+        this.temp = temp;
+        this.lat = lat;
+        this.lng = lng;
+    }
+
     public String getHash() {
         return hash;
     }
