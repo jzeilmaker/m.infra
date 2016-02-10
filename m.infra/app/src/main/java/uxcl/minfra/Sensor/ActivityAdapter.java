@@ -21,9 +21,9 @@ public class ActivityAdapter extends ArrayAdapter{
     private LayoutInflater inflater;
     private Context context;
 
-    public ActivityAdapter(Context ctx, int resourceId, List Listobjects) {
+    public ActivityAdapter(Context ctx, int resourceId, List<Result> results) {
 
-        super( ctx, resourceId, Listobjects );
+        super( ctx, resourceId, results );
         resource = resourceId;
         inflater = LayoutInflater.from( ctx );
         context=ctx;

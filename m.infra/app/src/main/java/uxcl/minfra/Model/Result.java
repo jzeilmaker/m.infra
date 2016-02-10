@@ -6,16 +6,27 @@ package uxcl.minfra.Model;
 public class Result {
 
     private int     person_id;
+    private int id;
     private String  temp;
     private String  lat;
     private String  lng;
     private String  mine;
+    private String  date;
 
-    public Result(String temp, String lat, String lng) {
-        super();
-        this.temp = temp;
-        this.lat = lat;
-        this.lng = lng;
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getHash() {

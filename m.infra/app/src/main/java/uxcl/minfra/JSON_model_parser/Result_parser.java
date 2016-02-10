@@ -27,14 +27,18 @@ public class Result_parser {
 
                 JSONObject c = data.getJSONObject(i);
 
-                Result result_model = new Result("1","2","3");
+                Result result_model = new Result();
 
-                result_model.setPerson_id(c.getInt("id"));
-                result_model.setLat(c.getString("lat"));
-                result_model.setLng(c.getString("long"));
-                result_model.setMine(c.getString("mine"));
+                result_model.setId(c.getInt("id"));
+                result_model.setPerson_id(c.getInt("user_id"));
                 result_model.setTemp(c.getString("temp"));
-                result_model.setHash(c.getString("hash"));
+                result_model.setLng(c.getString("long"));
+                result_model.setLat(c.getString("lat"));
+                result_model.setDate(c.getString("date"));
+
+//                result_model.setMine(c.getString("mine"));
+//
+//                result_model.setHash(c.getString("hash"));
 
                 result_parser_list.add(result_model);
             }

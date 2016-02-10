@@ -74,12 +74,12 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
         Log.d("nw5", String.valueOf(results));
 
-        List listCity = new ArrayList();
-        listCity.add(new Result("21","44","55"));
-        listCity.add(new Result("18","66","77"));
+//        List listCity = new ArrayList();
+//        listCity.add(new Result("21","44","55"));
+//        listCity.add(new Result("18","66","77"));
 
         listView = ( ListView ) findViewById(R.id.listview);
-        listView.setAdapter(new ActivityAdapter(this, R.layout.content_main, listCity));
+        listView.setAdapter(new ActivityAdapter(this, R.layout.content_main, results));
 
 
 //        temperaturelabel = (TextView) findViewById(R.id.textView);
@@ -293,6 +293,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
         p.setMethod("GET");
         p.setUri("http://rkodde.nl/infra");
+        p.setParam("method", "get");
         p.setParam("mime", String.valueOf(sha1hex));
         p.setParam("hash", String.valueOf(sha1hex));
 
