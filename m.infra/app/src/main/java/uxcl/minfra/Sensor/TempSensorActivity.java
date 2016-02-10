@@ -67,11 +67,12 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
             Log.d("nw ", "Server is online ");
 
             // Dit is stap 1. RequestData wordt aangeroepen. Je stuurt hier in de URL mee
-            this.requestData();
+            this.requestData(getSha1Hex(getPhoneImei()),getSha1Hex(getPhoneImei()));
         } else {
             Log.d("nw", "Server is offline ");
         }
 
+        Log.d("nw5", String.valueOf(results));
 
         List listCity = new ArrayList();
         listCity.add(new Result("21","44","55"));
@@ -193,8 +194,8 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
        p.setUri("http://rkodde.nl/infra");
        p.setMethod("GET");
        p.setParam("method", "post");
-       p.setParam("mime", String.valueOf("123"));
-       p.setParam("hash", String.valueOf("123"));
+       p.setParam("mime", String.valueOf(sha1hex));
+       p.setParam("hash", String.valueOf(sha1hex));
        p.setParam("temp", String.valueOf(temp));
        p.setParam("lat", String.valueOf(latitude));
        p.setParam("long", String.valueOf(longtide));
@@ -287,11 +288,13 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
     }
 
-    private void requestData() {
+    private void requestData(String sha1hex, String phone_imei) {
         RequestPackage p = new RequestPackage();
 
         p.setMethod("GET");
         p.setUri("http://rkodde.nl/infra");
+        p.setParam("mime", String.valueOf(sha1hex));
+        p.setParam("hash", String.valueOf(sha1hex));
 
         Log.d("getParam", p.getEncodedParams()); //logging
 
