@@ -74,9 +74,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
 
         Log.d("nw5", String.valueOf(results));
 
-//        List listCity = new ArrayList();
-//        listCity.add(new Result("21","44","55"));
-//        listCity.add(new Result("18","66","77"));
+
 
         listView = ( ListView ) findViewById(R.id.listview);
         listView.setAdapter(new ActivityAdapter(this, R.layout.content_main, results));
@@ -87,9 +85,6 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.ICE_CREAM_SANDWICH){
             mTemperature= mSensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE); // requires API level 14.
         }
-//        if (mTemperature == null) {
-//            listView.setText(NOT_SUPPORTED_MESSAGE);
-//        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -118,7 +113,7 @@ public class TempSensorActivity extends MainActivity implements SensorEventListe
                             tmp  = getTemp();
                         }
 
-                        attemptPost(url.RESULT, latitude, longitude, tmp, sha1Hex, phone_imei);
+//                        attemptPost(url.RESULT, latitude, longitude, tmp, sha1Hex, phone_imei);
 
                         Toast.makeText(getApplicationContext(),
                                 "\nLat: " + latitude + "\nLong: " + longitude + "\nTemp: " + tmp

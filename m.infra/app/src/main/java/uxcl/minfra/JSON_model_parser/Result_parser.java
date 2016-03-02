@@ -27,7 +27,7 @@ public class Result_parser {
 
                 JSONObject c = data.getJSONObject(i);
 
-                Result result_model = new Result();
+                Result result_model = new Result("33","33","33");
 
                 result_model.setId(c.getInt("id"));
                 result_model.setPerson_id(c.getInt("user_id"));

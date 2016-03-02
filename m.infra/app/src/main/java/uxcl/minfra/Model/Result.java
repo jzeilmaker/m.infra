@@ -5,7 +5,7 @@ package uxcl.minfra.Model;
  */
 public class Result {
 
-    private int     person_id;
+    private int person_id;
     private int id;
     private String  temp;
     private String  lat;
